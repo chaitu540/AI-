@@ -1,0 +1,35 @@
+go:-
+hypothesis(Disease),
+write('I believe that the patient have'),
+write(Disease),
+nl,
+write('TAKE CARE '),
+undo.
+
+hypothesis(cold)     :- cold, !.
+hypothesis(flu)      :- flu, !.
+hypothesis(typhoid)  :- typhoid, !.
+hypothesis(measles)  :- measles, !.
+hypothesis(malaria)  :- malaria, !.
+hypothesis(unknown). /* no diagnosis*/
+cold :-
+verify(headache),
+verify(runny_nose),
+verify(sneezing),
+verify(sore_throat),
+write('Advices and Sugestions:'),
+nl,
+write('1: Tylenol/tab'),
+nl,
+write('2: panadol/tab'),
+nl,
+write('3: Nasal spray'),
+nl,
+write('Please weare warm cloths Because'),
+nl.
+flu :-
+verify(fever),
+verify(headache),
+verify(chills),
+verify(body_ache),
+write('Advices and Sugestions:'),
